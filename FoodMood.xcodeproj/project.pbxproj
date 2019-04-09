@@ -47,6 +47,7 @@
 		63A5B9182256B2AD00EE4DC4 /* FoodMoodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodMoodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A5B91C2256B2AD00EE4DC4 /* FoodMoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMoodUITests.swift; sourceTree = "<group>"; };
 		63A5B91E2256B2AD00EE4DC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63D6928B225CB9AD00C49D18 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 		63A5B8FB2256B2AB00EE4DC4 /* FoodMood */ = {
 			isa = PBXGroup;
 			children = (
+				63D6928B225CB9AD00C49D18 /* MyPlayground.playground */,
 				63A5B8FC2256B2AB00EE4DC4 /* AppDelegate.swift */,
 				63A5B8FE2256B2AB00EE4DC4 /* ViewController.swift */,
 				63A5B9002256B2AB00EE4DC4 /* Main.storyboard */,
