@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		63138F4C2265F1C3007E835D /* MealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63138F4B2265F1C3007E835D /* MealsTableViewController.swift */; };
+		6332E4BA229567BF00767ACD /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6332E4B9229567BF00767ACD /* Alert.swift */; };
 		63460DB122774602002E8385 /* AddAnItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63460DB022774602002E8385 /* AddAnItemDelegate.swift */; };
 		63A060032271E62100B79D42 /* NewItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63A060012271E62100B79D42 /* NewItemViewController.xib */; };
 		63A060062271EBBE00B79D42 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A060052271EBBE00B79D42 /* NewItemViewController.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		63138F4B2265F1C3007E835D /* MealsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsTableViewController.swift; sourceTree = "<group>"; };
+		6332E4B9229567BF00767ACD /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		63460DB022774602002E8385 /* AddAnItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnItemDelegate.swift; sourceTree = "<group>"; };
 		63A060012271E62100B79D42 /* NewItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewItemViewController.xib; sourceTree = "<group>"; };
 		63A060052271EBBE00B79D42 /* NewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				63E97FD82261228200C4FC91 /* Main.storyboard */,
 				63A060012271E62100B79D42 /* NewItemViewController.xib */,
+				6332E4B9229567BF00767ACD /* Alert.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6332E4BA229567BF00767ACD /* Alert.swift in Sources */,
 				63138F4C2265F1C3007E835D /* MealsTableViewController.swift in Sources */,
 				63E97FD322611F6E00C4FC91 /* Item.swift in Sources */,
 				63E97FD122611F0B00C4FC91 /* Meal.swift in Sources */,

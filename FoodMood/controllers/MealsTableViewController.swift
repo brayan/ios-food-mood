@@ -27,10 +27,34 @@ class MealsTableViewController : UITableViewController, AddMealDelegate {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
         cell.textLabel?.text = meal.name
         
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(showDetails))
+        cell.addGestureRecognizer(longPressRecognizer)
+        
         return cell
     }
     
-    func myFunc(externalParamName internalParamName: String) {
+    @objc func showDetails(recognizer: UILongPressGestureRecognizer) {
+        if (recognizer.state == UIGestureRecognizer.State.began) {
+            let cell = recognizer.view as! UITableViewCell
+            
+            if let indexPath = tableView.indexPath(for: cell) {
+                let row = indexPath.row
+                let meal = meals[row]
+                
+                let details = UIAlertController(title: meal.name, message: meal.details(), preferredStyle: UIAlertController.Style.alert)
+                
+                let remove = UIAlertAction(title: "Remove", style: UIAlertAction.Style.destructive, handler: removeSelected)
+                details.addAction(remove)
+                
+                let cancel = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
+                details.addAction(cancel)
+                
+                self.present(details, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    private func removeSelected(action: UIAlertAction) {
         
     }
     

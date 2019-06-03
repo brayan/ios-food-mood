@@ -24,6 +24,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let newItem = NewItemViewController(delegate: self)
         if let navigation = navigationController {
             navigation.pushViewController(newItem, animated: true)
+        } else {
+            Alert(controller: self).show()
         }
     }
     
@@ -31,26 +33,45 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         items.append(item)
         if let table = tableView {
             table.reloadData()
+        } else {
+            Alert(controller: self).show(message: "Unable to update the table")
         }
     }
     
     @IBAction func onClickAdd() {
-        let name: String = nameField2.text!
-        if let happiness = Int(happinessField.text!) {
-            let meal = Meal(name: name, happiness: happiness, items: selected)
-            print("eaten \(meal.name) with happiness \(meal.happiness) with \(meal.items)!")
-            
-            if (delegate == nil) {
+        if let meal = getMealFromForm() {
+            if let meals = delegate {
+                meals.add(meal)
+                if let navigation = navigationController {
+                    navigation.popViewController(animated: true)
+                } else {
+                    Alert(controller: self).show(message: "Unable to go back, but the meal was added.")
+                }
                 return
             }
-            
-            delegate!.add(meal)
-            
-            if let navigation = navigationController {
-                navigation.popViewController(animated: true)
-            }
-            
         }
+        Alert(controller: self).show()
+    }
+    
+    private func getMealFromForm() -> Meal? {
+        if let name: String = nameField2?.text {
+            if let happiness = convertToInt(happinessField?.text) {
+                
+                let meal = Meal(name: name, happiness: happiness, items: selected)
+                print("eaten \(meal.name) with happiness \(meal.happiness) with \(meal.items)!")
+                
+                return meal
+            }
+        }
+        
+        return nil
+    }
+    
+    private func convertToInt(_ text: String?) -> Int? {
+        if let number = text {
+            return Int(number)
+        }
+        return nil
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,8 +98,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let item = items[indexPath.row]
                 if let position = selected.firstIndex(of: item) {
                     selected.remove(at: position)
+                } else {
+                    Alert(controller: self).show()
                 }
             }
+        } else {
+            Alert(controller: self).show()
         }
     }
 
